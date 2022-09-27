@@ -30,3 +30,47 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+public class CrossbodyBag extends Bag{
+
+    /**
+     * Creates a new CrossbodyBag with the given color, number of straps and
+     * capacity.
+     *
+     * @param color
+     * @param capacity
+     * @param numberOfStraps
+     */
+
+    int numberOfStraps;
+    public CrossbodyBag(String color, int capacity, int numberOfStraps) {
+        /**
+         * This is how we call the parent's constructor
+         * The Python equivalent is super().__init__(...)
+         */
+        super(color, capacity);
+        this.numberOfStraps = numberOfStraps;
+    }
+
+    /**
+     * Gets number of straps.
+     */
+    public int getNumberOfStraps(){
+        return this.numberOfStraps;
+    }
+
+    /**
+     * Increase the capacity of this bag by 2.
+     */
+    @Override
+    public void enhance() {
+        super.increaseCapacity(2);
+    }
+
+    @Override
+    public String toString() {
+        return this.getColor() + " Crossbody Bag with "+ this.getNumberOfStraps() + " straps (" + this.getNumberOfContents() + " / " +
+                this.getCapacity() + ")";
+    }
+}
+
+
